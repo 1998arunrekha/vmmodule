@@ -40,10 +40,14 @@ module "VirtualNetwork" {
     testvnet1 = "productionvnet2"
     location = "west us"
     resourcegroup ="productionrg1"
-    subnet11 = "mysub11"
 
 }
-
+module "Subnet" {
+  source = "./Subnet"
+  resourcegroup= "productionrg1"
+  subnet11 = "mysubnet22"
+  
+}
 module "NetworkInterface" {
   source = "./NetworkInterface"
   nic1 = "networkinterface11"
